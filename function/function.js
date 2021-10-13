@@ -18,8 +18,25 @@ function getMaxDigit(number){
 function getFirstLetterUpper(word){
     const wordString = String(word).toLowerCase();
     const firstLetterUpper = wordString[0].toUpperCase();
-    const wordSlice = wordString.slice(1)
-    const wordUpper = firstLetterUpper+wordSlice
-    console.log(wordUpper)
+    const wordSlice = wordString.slice(1);
+    const wordUpper = firstLetterUpper + wordSlice;
+
+    return wordUpper;
 }
-getFirstLetterUpper('vlad')
+console.log(getFirstLetterUpper('AbraCadabra'))
+// Створити функцію, яка рахує скільки разів певна буква повторюється в слові.
+// Приклад: countLetter("а", "Асталавіста") -> 4
+function countLetter(letter, word){
+    const letterLower = String(letter).toLowerCase();
+    const wordLowerArr = String(word).toLowerCase().split(``);
+    let totlaLetter = 0;
+
+    for(let i= 0; i<=wordLowerArr.length; i++){
+        if(wordLowerArr[i] == letterLower){
+            totlaLetter = totlaLetter + 1 
+        }
+    }
+    return totlaLetter
+    
+}
+console.log(countLetter(`a`, `Astalavista`))
