@@ -1,5 +1,5 @@
 // Створити функцію getMaxDigit(number) 
-// – яка отримує будь-яке число та виводить найбільшу цифру в цьому числі. Приклади: 1236 -> 6, 987 -> 9, 385 -> 8
+// яка отримує будь-яке число та виводить найбільшу цифру в цьому числі. Приклади: 1236 -> 6, 987 -> 9, 385 -> 8
 function getMaxDigit(number){
     let arrNumber = String(number).split('');
     let max = arrNumber[0];
@@ -48,13 +48,16 @@ console.log(countLetter(`a`, `Astalavista`))
 function deleteLetters(letter, word){
     const letterLower = String(letter).toLowerCase();
     const wordLowerArr = String(word).toLowerCase().split(``);
-    let arrWord = []
+    let arrWord = [];
+
     for(let i = 0; i < wordLowerArr.length; i++){
         if(letterLower !== wordLowerArr[i]){
             arrWord.push(wordLowerArr[i])
         }
     }
      
-    return arrWord.join("")
+    return arrWord.join("");
 }
 console.log(deleteLetters(`a`, `blablabla`))
+
+ 
