@@ -1,3 +1,22 @@
+
+//NIck Morgan -  Task Create a bad phrase generator
+// - use `+` for string
+// - use `join` 
+let bodyParts = [`nose`,`lips`,`arms`,`legs`,`body`,];
+let animals = ['Chicken','Elephant','Monkey','Rooster','Ostrich']
+let randomWords = [`funny`,`big`,`small`]
+function random(){
+    return Math.floor(Math.random()*5)
+}
+// +
+console.log(`Your `+bodyParts[random()]+` is like `+animals[random()])
+// join
+let randmPhrase = [`Your`,bodyParts[random()],`is like`,animals[random()]].join(" ")
+console.log(randmPhrase)
+
+// Next Cursor task
+// In this task use only:
+// cycles-branching, push,pop, shift, unshift
 const students = ["Олександр", "Ігор", "Оленa", "Ірa", "Олексій", "Світланa"];
 const themes = ["Диференційне рівняння", "Теорія автоматів", "Алгоритми і структури даних"];
 const marks = [4, 5, 5, 3, 4, 5];
