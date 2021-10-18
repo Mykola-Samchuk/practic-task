@@ -2,7 +2,7 @@ const students = ["Олександр", "Ігор", "Оленa", "Ірa", "Ол�
 const themes = ["Диференційне рівняння", "Теорія автоматів", "Алгоритми і структури даних"];
 const marks = [4, 5, 5, 3, 4, 5];
 
-// Separate boys from girls
+//1. Separate boys from girls
 function getGirls(people){
     const girls = [];
 
@@ -31,7 +31,7 @@ function getBoys(people){
 };
 console.log(getBoys(students))
 
-// Divide students into pairs (boy + girl) to work on the project. 
+//2. Divide students into pairs (boy + girl) to work on the project. 
 // You should get an nested array with pairs of students: [["Alexander", "Elena"], [..], [...]];
 function getPairs(boys, girls){
     studentPairs = [];
@@ -44,7 +44,7 @@ function getPairs(boys, girls){
 };
 console.log(getPairs(getBoys(students), getGirls(students)));
 
-// Compare pairs from the previous task and the topic of the projects that students will work on. 
+//3. Compare pairs from the previous task and the topic of the projects that students will work on. 
 // The nested array of the form should turn out: [["Alexander and Elena", "Theory of automata"], [...], [...]]
 
 function getPairsThemes(studentsPairs, themes){
@@ -54,6 +54,20 @@ function getPairsThemes(studentsPairs, themes){
         pairsThemes.push([studentsPairs[i][0] + ` i ` + studentsPairs[i][1], themes[i]])
     }
 
-    return console.log(pairsThemes)
+    return pairsThemes
 }
-getPairsThemes(getPairs(getBoys(students), getGirls(students)), themes)
+console.log(getPairsThemes(getPairs(getBoys(students), getGirls(students)), themes))
+
+//4. Зіставте оцінки(marks) зі студентом(students): [["Саша", 4], [...], [...]]
+
+function getStudentsMarks(student, marks){
+    studentMarks = [];
+
+    for(let i=0; i<marks.length; i++){
+        studentMarks.push([student[i], marks[i]])
+    }
+    return studentMarks;
+}
+console.log(getStudentsMarks(students, marks))
+
+//5.
