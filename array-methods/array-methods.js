@@ -7,10 +7,10 @@ function getRandomArray(length, min, max){
     const maxNumber = Math.max(min, max);
     const arrRandom = []
     
-    
     for(let i=0; i<length; i++){
         arrRandom.push(Math.floor(minNumber + Math.random() * (maxNumber + 1 - minNumber)))
     }
+
     return arrRandom
 }
 console.log(getRandomArray(5, 1, 10))
@@ -23,6 +23,7 @@ function getAverage(...numbers){
     let nums = numbers.filter((item)=>{
         return Number.isInteger(item)
     })
+
     let sum = 0
     nums.map((item)=>{
         sum += item
@@ -31,3 +32,41 @@ function getAverage(...numbers){
     return sum/nums.length
 }
 console.log(getAverage (6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2))
+
+// Create a function filterEvenNumbers (... numbers) - which filters even numbers passed as arguments to the function
+// Example: filterEvenNumbers (1, 2, 3, 4, 5, 6) -> [1, 3, 5]
+
+function filterEvenNumbers(...numbers){
+    let result = numbers.filter((item)=>{
+        if(item % 2 == 1){
+            return item
+        }
+    })
+
+    return result
+}
+console.log(filterEvenNumbers(1, 2, 3, 4, 5, 6))
+
+// Create a function countPositiveNumbers (... numbers) - which will count the number of numbers greater than 0
+// Example: countPositiveNumbers (1, -2, 3, -4, -5, 6) -> 3
+
+function countPositiveNumbers(...numbers){
+    let sum = 0
+    numbers.map((item)=>{
+        if(item >= 0){
+            sum += 1
+        }
+        
+    })
+    return sum
+}
+console.log(countPositiveNumbers(1, -2, 3, -4, -5, 6))
+// or second answer
+function countPositiveNumbersFilter(...numbers){
+    let greaterNumbers = numbers.filter((item)=>{
+        return item > 0
+        
+    })
+    return greaterNumbers.length
+}
+console.log(countPositiveNumbersFilter(1, -2, 3, -4, -5, 6))
