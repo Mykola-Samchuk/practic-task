@@ -11,6 +11,23 @@ function getRandomArray(length, min, max){
     for(let i=0; i<length; i++){
         arrRandom.push(Math.floor(minNumber + Math.random() * (maxNumber + 1 - minNumber)))
     }
-    console.log(arrRandom)
+    return arrRandom
 }
-getRandomArray(5, 1, 10)
+console.log(getRandomArray(5, 1, 10))
+
+// Create a function getAverage (... numbers) - which calculates the arithmetic mean of all arguments passed to it. 
+// INTEGER NUMBERS ARE IGNORED
+// Example: getAverage (6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) -> 34.4
+
+function getAverage(...numbers){
+    let nums = numbers.filter((item)=>{
+        return Number.isInteger(item)
+    })
+    let sum = 0
+    nums.map((item)=>{
+        sum += item
+    })
+
+    return sum/nums.length
+}
+console.log(getAverage (6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2))
